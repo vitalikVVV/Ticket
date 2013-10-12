@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: TicketSysytem_development
+  database: TicketSystem
   pool: 5
   username: root
-  password:
+  password: root
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: TicketSysytem_test
+  database: TicketSystem_test
   pool: 5
   username: root
   password:
@@ -35,7 +35,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: TicketSysytem_production
+  database: TicketSystem_production
   pool: 5
   username: root
   password:
