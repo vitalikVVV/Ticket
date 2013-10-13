@@ -1,5 +1,5 @@
 class StaffController < ApplicationController
-  #before_filter :confirm_logged_in,  :except => [:login, :register, :attempt_login, :logout ]
+  #before_filter :confirm_logged_in,  :except => [:register, :attempt_login, :logout ]
 
   def login
     #login form
@@ -18,7 +18,7 @@ class StaffController < ApplicationController
       if user.save
         logger.warn "Succes saved"
         save_to_session(user.id, user.username)
-        redirect_to(:action => "game")
+        redirect_to(:controller => "tickets", :action => "index")
       end
     end
   end

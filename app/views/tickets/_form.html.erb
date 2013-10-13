@@ -1,36 +1,42 @@
-<%= form_for(@ticket) do |f| %>
-  <% if @ticket.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+<%= form_for(@ticket, :html => {:class => "form-horizontal"}) do |f| %>
+    <div class="control-group">
 
-      <ul>
-      <% @ticket.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% if @ticket.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+            <ul>
+              <% @ticket.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
+
+      <%= f.label :title, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title %>
+      </div>
+
+      <br/>
+      <%= f.label :description, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :style => "height: 200px" %>
+      </div>
+
+      <br/>
+        <%= f.label :name, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :name %>
+        </div>
+
+      <br/>
+        <%= f.label :email, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :email %>
+        </div>
+
+      <br/>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-      <%= f.label :name %>
-      <br/>
-      <%= f.text_field :name %>
-  </div>
-  <div class="field">
-      <%= f.label :email %>
-      <br/>
-      <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit(class:"btn") %>
 <% end %>

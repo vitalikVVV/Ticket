@@ -3,12 +3,16 @@ TicketSysytem::Application.routes.draw do
 
   resources :statuses
 
-
   resources :tickets
-
 
   get '/login', to: 'staff#login'
   get '/register', to: 'staff#register'
+  post '/register', to: 'staff#register'
+
+
+  #scope module: 'staff' do
+  #  resources :login, :register
+  #end
 
 
   # The priority is based upon order of creation:

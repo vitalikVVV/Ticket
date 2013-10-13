@@ -1,11 +1,13 @@
 <%= stylesheet_link_tag "table.css"%>
-<legend>All tickets</legend>
+<%= javascript_include_tag "custom.js"%>
+
+<legend>All Tickets</legend>
 
   <div>
     <input id="search" placeholder="Search..." type="text">
   </div>
 
-  <select id="multiselect"  multiple="multiple">
+  <select id="multiselect"  multiple="multiple" style="height: 95px">
     <% @statuses.each do |status| %>
       <option value="<%= status.id %>"><%= status.name %></option>
     <% end %>
