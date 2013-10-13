@@ -1,19 +1,18 @@
-= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css", :media => "all"
 .span6
   .login
     = form_tag({:action => 'register'}, :class=>"form-horizontal") do
-      %legend Регистрация нового пользователя
+      %legend Register
       .row-fluid
         .alert.alert-info
-          %small Все поля являются обязательными для заполнения.
+          %small Please fill in all required fields
       %table
         %tr
           %td= label_tag(:username)
           %td= text_field_tag(:username)
         %tr
-          %td= label_tag("Пароль")
+          %td= label_tag("Password")
           %td= password_field_tag(:password)
         %tr
           %td &nbsp;
-          %td= submit_tag("Зарегистрироваться")
-          %td= link_to("Войти",:action => "login", :rel => "tooltip", :title =>"Войти как зарегистрированый пользователь")
+          %td= submit_tag("Register")
+          %td= link_to("Login",:action => "login", :rel => "tooltip", :title =>"Login as registered user")

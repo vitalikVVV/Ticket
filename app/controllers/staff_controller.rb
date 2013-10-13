@@ -1,11 +1,6 @@
 class StaffController < ApplicationController
   #before_filter :confirm_logged_in,  :except => [:login, :register, :attempt_login, :logout ]
 
-  def index
-    logger.warn("I.m here")
-    render('login')
-  end
-
   def login
     #login form
   end

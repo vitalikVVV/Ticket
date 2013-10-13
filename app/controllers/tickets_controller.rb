@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
-  #before_filter :confirm_logged_in,  :except => [:new]
+  before_filter :confirm_logged_in,  :except => [:new]
 
   def index
     @tickets = Ticket.all
+    @statuses = Status.all
 
     respond_to do |format|
       format.html # index.html.erb
