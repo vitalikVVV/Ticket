@@ -1,5 +1,15 @@
 TicketSysytem::Application.routes.draw do
+  resources :staff
+
+  resources :statuses
+
+
+  resources :tickets
+
+
   resources :customers
+
+
 
 
   # The priority is based upon order of creation:

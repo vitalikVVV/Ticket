@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "table.css"%>
+<h1>All tickets</h1>
+<div>
+    <input id="search" placeholder="Search...">
+</div>
+
+<div class="skined_table" style="width:100%">
+    <table>
+      <tr>
+        <td>Reference</td>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Status</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.reference %></td>
+        <td><%= ticket.title %></td>
+        <td style="width: 450px"><%= ticket.description %></td>
+        <td style="width: 125px"><%= ticket.status_name %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+</div>
+
+<br />
+
+<%= link_to 'New Ticket', new_ticket_path %>
